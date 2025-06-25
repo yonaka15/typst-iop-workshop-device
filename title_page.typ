@@ -1,9 +1,5 @@
-#let main_color = rgb("#45B035")
-#let iop_color = rgb("#9dc816")
+#import "parts.typ": main_color, header_line, iop_color // https://cetz-package.github.io/docs/
 
-#let header_line = line(length: 100%, stroke: 2mm + gradient.linear(main_color, white))
-
-#let header_page(title, comment) = [
 #set page(
   paper: "a4",
   flipped: true,
@@ -29,10 +25,10 @@
 
 #align(center)[
   #text(size: 36pt)[
-    #title
+    *SAWACHIエンジニア養成講座 (デバイス編)*
   ]
 #v(30mm)
 
-#comment
-]
+  2025年6月27日\
+  IoP技術者コミュニティ
 ]
