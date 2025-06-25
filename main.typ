@@ -424,10 +424,6 @@
   #set align(center)
   ESP32の32番ピンがLEDのアノードに接続されていることに注目してください
 ]
-// ADDED LINK (Blink is also 0001_led with delay)
-#align(center)[
-  #link("https://iop-workshop.vercel.app/0001_led", "LED点滅のサンプルコードのベースはこちら")
-]
 
 #pagebreak()
 
@@ -466,7 +462,14 @@
     caption: [Arduino IDEのコードエディタ]
   )
 ])
+#pagebreak()
 
+== LED点滅のプログラム
+#header_line
+#v(20mm)
+#align(center)[
+  #link("https://iop-workshop.vercel.app/0001_led", "LED点滅のサンプルコードはこちら")
+]
 #pagebreak()
 
 #header_page([= 温湿度の取得],[])
@@ -536,11 +539,14 @@
   image("./images/Screenshot 2025-06-23 at 14.35.00.png", width: 80%),
   caption: [シリアルモニタの画面]
 )
-// ADDED LINK
+#pagebreak()
+
+== 温湿度取得のプログラム
+#header_line
+#v(20mm)
 #align(center)[
   #link("https://iop-workshop.vercel.app/0002_sht31", "温湿度取得のサンプルコードはこちら")
 ]
-
 #pagebreak()
 
 #header_page([= MQTT通信],[IoTに適した通信方式を学びます])
@@ -591,13 +597,30 @@
     出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
   30_SAWACHI_デバイスAPIを活用した開発手法説明]
 )
-// ADDED LINK
-#align(center)[
-  #link("https://iop-workshop.vercel.app/0004_mqtt_pub", "MQTT送信テストのサンプルコード") #h(1em)
-  #link("https://iop-workshop.vercel.app/0005_mqtt_sub", "MQTT受信テストのサンプルコード") \
-  #link("https://iop-workshop.vercel.app/0006_button", "ボタンを使ったMQTT送信デモのサンプルコード")
-]
+#pagebreak()
 
+== MQTT送信
+#header_line
+#v(5mm)
+#align(center)[
+  #link("https://iop-workshop.vercel.app/0004_mqtt_pub", "MQTT送信テストのコード") \
+]
+#pagebreak()
+
+== MQTT受信
+#header_line
+#v(5mm)
+#align(center)[
+  #link("https://iop-workshop.vercel.app/0005_mqtt_sub", "MQTT受信テストのコード") \
+]
+#pagebreak()
+
+== （補足）ボタンを使ったMQTT送信デモ
+#header_line
+#v(5mm)
+#align(center)[
+  #link("https://iop-workshop.vercel.app/0006_button", "ボタンを使ったMQTT送信デモ")
+]
 #pagebreak()
 
 == Qsuプロトコル
@@ -615,14 +638,26 @@
     出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
   30_SAWACHI_デバイスAPIを活用した開発手法説明]
 )
-// ADDED LINK
+#pagebreak()
+
+== Qsuプロトコル
+#header_line
+#v(5mm)
 #align(center)[
-  #link("https://iop-workshop.vercel.app/0007_qsu", "Qsuプロトコルでのデータ送信サンプルコード")
+  #link("https://iop-workshop.vercel.app/0007_qsu", "Qsuプロトコルでのデータ送信")
 ]
 
 #pagebreak()
 
 #header_page([= SAWACHIでのデータ確認],[詳細分析画面＝モデルメソッドを使用してデータを確認します])
+
+== データの送信のプログラム
+#header_line
+#v(5mm)
+#align(center)[
+  #link("https://iop-workshop.vercel.app/0008_sawachi", "SAWACHIへのデータ送信")
+]
+#pagebreak()
 
 == 詳細分析画面へのアクセス
 #header_line
@@ -652,8 +687,4 @@
   image("./images/Screenshot 2025-06-23 at 16.20.05.png", width: 80%),
   caption: [詳細分析画面のデータ表示例]
 )
-// ADDED LINK
-#align(center)[
-  #link("https://iop-workshop.vercel.app/0008_sawachi", "SAWACHIへのデータ送信サンプルコード")
-]
 
