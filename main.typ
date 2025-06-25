@@ -441,6 +441,10 @@
 )
 
 == Arduino IDEでプログラムを書く
+#include "arduino-ide-setup.typ"
+#include "arduino-ide-ui.typ"
+#include "arduino-ide-sketch-ops.typ"
+#include "arduino-ide-sample-sketch.typ"
 #header_line
 #v(20mm)
 #grid(columns: (1fr, 1fr),
