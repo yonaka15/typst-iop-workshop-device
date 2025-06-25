@@ -1,4 +1,4 @@
-== Arduino IDEのUI（ユーザーインターフェース）の概要
+== Arduino IDE UI（ユーザーインターフェース）の概要
 #header_line
 #v(10mm)
 

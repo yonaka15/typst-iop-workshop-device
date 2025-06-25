@@ -1,7 +1,7 @@
-== Arduino IDEのサンプルスケッチの活用 (Blink)
+== Arduino IDE サンプルスケッチの活用
 #header_line
 #v(10mm)
 
-// - 「ファイル」->「スケッチ例」から基本的なサンプル（例: 01.Basics > Blink）を開き、動作確認する手順。
+// - サンプルスケッチの活用 (Blink)
 
 #pagebreak()

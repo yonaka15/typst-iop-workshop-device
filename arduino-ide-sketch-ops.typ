@@ -1,4 +1,4 @@
-== Arduino IDEのスケッチの基本操作
+== Arduino IDE スケッチの基本操作
 #header_line
 #v(10mm)
 
