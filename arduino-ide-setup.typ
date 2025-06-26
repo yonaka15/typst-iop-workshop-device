@@ -1,3 +1,5 @@
+#import "parts.typ": main_color, header_line, iop_color
+
 == Arduino IDE インストール後の確認と初期設定
 #header_line
 #v(10mm)
