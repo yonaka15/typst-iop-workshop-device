@@ -46,7 +46,6 @@
   image("./images/Screenshot 2025-06-23 at 10.07.27.png"),
   caption: [SAWACHIを経由して温湿度データを取得し、グラフ化する]
 )
-
 #pagebreak()
 
 #v(15mm)
@@ -58,7 +57,6 @@
   caption: "データを表示するダッシュボード「詳細分析画面」"
   )
 ]
-
 #pagebreak()
 
 == SAWACHIの仕組み
@@ -80,7 +78,6 @@
   ソフトウェア同士が通信するための*インターフェース*です。
   *インターフェース*とは、*接点*や*境界*を意味します。
 ]
-
 #pagebreak()
 
 == 本講座の内容
@@ -94,7 +91,6 @@
   image("./images/Screenshot 2025-06-23 at 10.24.08.png", width: 80%),
   caption: [温湿度データの送信は MQTT を使用します]
 )
-
 #pagebreak()
 
 == 全体手順図
@@ -108,6 +104,7 @@
   image("./images/Screenshot 2025-06-23 at 10.37.51.png", width: 60%),
   caption: [講座の全体手順図]
 )
+#pagebreak()
 
 == 本講座の難易度
 #header_line
@@ -120,7 +117,6 @@
   image("./images/Screenshot 2025-06-23 at 10.37.36.png", width: 80%),
   caption: [講座の難易度]
 )
-
 #pagebreak()
 
 == 事前準備の確認
@@ -132,7 +128,7 @@
 
   // TODO: correct the link
   #link(
-    "http://iot-community.jp/sawachi/prepare.html",
+    "https://ptk-y-nakahira.github.io/typst-iop-advance-materials/",
     "事前準備資料",
   )
 ]
@@ -152,7 +148,6 @@
   image("./images/Screenshot 2025-06-23 at 11.13.31.png", width: 80%),
   caption: [本講座でのマイコンの役割]
 )
-
 #pagebreak()
 
 == Arduino と ESP32
@@ -169,7 +164,6 @@
   image("./images/Screenshot 2025-06-23 at 11.09.44.png", width: 80%),
   caption: [Arduino と ESP32]
 )
-
 #pagebreak()
 
 == Arduino IDE とは
@@ -186,6 +180,7 @@
   image("./images/Screenshot 2025-06-23 at 11.32.50.png", width: 50%),
   caption: [Arduino IDE の画面]
 )
+#pagebreak()
 
 == ESP32を使用したLED点灯
 #header_line
@@ -204,7 +199,6 @@
 #align(center)[
   #link("https://iop-workshop.vercel.app/0001_led", "LED点灯のサンプルコードはこちら")
 ]
-
 #pagebreak()
 
 == ブレッドボードについて
@@ -227,7 +221,6 @@
   同じ番号のA-F列、G−L列はそれぞれ内部で導通しています。\
   *+*, *-* は電源用の接続です。横一列に導通しています。
 ]
-
 #pagebreak()
 
 == 使用する部品
@@ -253,7 +246,6 @@
   image("./images/Screenshot 2025-06-23 at 12.08.47.png", width: 50%),
   caption: [使用する部品]
 )
-
 #pagebreak()
 
 == ブレッドボードの番号
@@ -275,7 +267,6 @@
   #set text(size: 18pt, fill: orange-500)
   これ以降の結線図では、アルファベットと数字を組み合わせて位置を表現します。
 ]
-
 #pagebreak()
 
 #header_page([= LED点灯],[プログラム不要でLEDを点灯させてみましょう])
@@ -300,7 +291,6 @@
   #set text(size: 16pt, fill: orange-500)
   USBケーブルを接続して、ESP32に電源を供給するとLEDが点灯します。\
 ]
-
 #pagebreak()
 
 == ブレッドボードへの取り付け
@@ -316,7 +306,6 @@
   image("./images/Screenshot 2025-06-23 at 13.29.30.png", width: 60%),
   caption: [ブレッドボードにESP32を取り付ける]
 )
-
 #pagebreak()
 
 == ブレッドボードの利点
@@ -334,8 +323,21 @@
   caption: [はんだ付け: ブレッドボードの利点は、\
   はんだ付けせずに部品を差し込むだけで回路を組むことができる点です。]
 )
-
 #pagebreak()
+
+== LEDの点灯の様子
+#header_line
+#v(5mm)
+#align(center)[
+  #set text(size: 24pt)
+  *LEDが点灯しましたか?*
+]
+#figure(
+  image("./images/IMG_1765.jpg", fit:"cover", width: 80%, height: 100mm),
+  caption: [LEDが点灯している様子]
+)
+#pagebreak()
+
 
 #v(15mm)
 #header_line
@@ -463,6 +465,15 @@
   )
 ])
 #pagebreak()
+
+#include "arduino-ide-sample-sketch.typ"
+#include "arduino-ide-sketch-ops.typ"
+#include "arduino-ide-ui.typ"
+#include "arduino-ide-setup.typ"
+#include "arduino-ide-setup.typ"
+#include "arduino-ide-ui.typ"
+#include "arduino-ide-sketch-ops.typ"
+#include "arduino-ide-sample-sketch.typ"
 
 == LED点滅のプログラム
 #header_line
