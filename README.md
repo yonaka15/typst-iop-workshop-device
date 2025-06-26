@@ -8,6 +8,12 @@
 
 本講座の詳細は、関連資料（フライヤーや改善提案メモなど）も参照してください。
 
+## 資料の閲覧
+
+本講義資料は、以下のURLからPDF形式で閲覧できます。
+
+[https://ptk-y-nakahira.github.io/typst-iop-workshop-device/](https://ptk-y-nakahira.github.io/typst-iop-workshop-device/)
+
 ## 講座内容 (予定)
 
 *   LED点灯（基礎確認）
@@ -23,13 +29,6 @@
 *   AWS IoT Core の基礎を学びたい方
 *   農業分野でのデジタル化に興味がある方
 
-## 必要な持ち物
-
-*   ノートパソコン (Windows)
-*   ESP32ボード、SHT31センサ、ブレッドボード等一式
-    *   当日会場にて現金販売（3,300円、領収書発行）
-    *   過去に参加して既にお持ちの方は購入不要
-
 ## 本資料について
 
 このリポジトリには、Typst ([https://typst.app/](https://typst.app/)) を使用して作成された講義資料のソースファイルが含まれています。
@@ -37,20 +36,6 @@
 ### Typstとは
 
 Typst は、LaTeX のような強力な組版機能を持ちながら、より学習しやすく使いやすいことを目指して開発された新しいマークアップベースの組版システムです。特に科学技術文書の作成に適しており、オープンソースで開発されています。
-
-## 利用方法（資料のビルドなど）
-
-(講義資料のTypstプロジェクトのビルド方法を後日追記予定)
-
-'''
-# 例 (実際のファイル構成に合わせて調整):
-# 1. このリポジトリをクローンします。
-# git clone https://github.com/yonaka15/typst-iop-workshop-device.git
-# cd typst-iop-workshop-device
-# 2. `main.typ` または関連する `.typ` ファイルを確認・編集します。
-# 3. 以下のコマンドで PDF を生成します (Typstがインストールされている場合)。
-# typst compile main.typ lecture-notes.pdf
-'''
 
 ## 注意事項
 
