@@ -126,7 +126,6 @@
   #set text(size: 24pt)
   事前準備は完了していますか？
 
-  // TODO: correct the link
   #link(
     "https://ptk-y-nakahira.github.io/typst-iop-advance-materials/",
     "事前準備資料",
@@ -301,7 +300,6 @@
   ブレッドボードにESP32を取り付ける際は、\
   向きをよく確認し、奥までしっかりと差し込みます。\
 ]
-
 #figure(
   image("./images/Screenshot 2025-06-23 at 13.29.30.png", width: 60%),
   caption: [ブレッドボードにESP32を取り付ける]
@@ -320,8 +318,10 @@
 ]
 #figure(
   image("./images/Screenshot 2025-06-23 at 13.31.26.png", width: 30%),
-  caption: [はんだ付け: ブレッドボードの利点は、\
-  はんだ付けせずに部品を差し込むだけで回路を組むことができる点です。]
+  caption: [はんだ付け: 上手なはんだ付けには熟練の技術が必要です。\
+  ブレッドボードの利点は、
+  はんだ付けせずに部品を差し込むだけで\
+  回路を組むことができる点です。]
 )
 #pagebreak()
 
@@ -441,6 +441,7 @@
   image("./images/Screenshot 2025-06-23 at 13.14.34.png", width: 80%),
   caption: [結線の写真]
 )
+#pagebreak()
 
 == Arduino IDEでプログラムを書く
 #header_line
@@ -466,22 +467,88 @@
 ])
 #pagebreak()
 
-#include "arduino-ide-sample-sketch.typ"
-#include "arduino-ide-sketch-ops.typ"
-#include "arduino-ide-ui.typ"
-#include "arduino-ide-setup.typ"
-#include "arduino-ide-setup.typ"
-#include "arduino-ide-ui.typ"
-#include "arduino-ide-sketch-ops.typ"
-#include "arduino-ide-sample-sketch.typ"
+== ボード設定の確認
+#header_line
+#v(5mm)
+#align(left)[
+  //#set text(size: 24pt)
+  Arduino IDEでESP32を使用するためには、
+  ボードの設定を確認する必要があります。\
+  ボードの設定は、*ツール*メニューから行います。\
+  #v(10mm)
+  *ボード*メニューから、使用するESP32 Wrorver Moduleを選択します。\
+]
+#figure(
+  image("./images/image (3).png", width: 50%),
+  caption: [Arduino IDEのボード設定]
+)
+#align(left)[
+  もしボードの設定が表示されない場合は、
+  *ツール*メニューから*ボードマネージャー*を開き、
+  ESP32のボードをインストールしてください。\
+  #link(
+    "https://ptk-y-nakahira.github.io/typst-iop-advance-materials/",
+    "事前準備資料",
+  )
+]
+#pagebreak()
+
+== シリアルポートの設定
+#header_line
+#v(5mm)
+#align(left)[
+  //#set text(size: 24pt)
+  Arduino IDEでESP32を使用するためには、
+  シリアルポートの設定を確認する必要があります。
+  シリアルポートの設定は、*ツール*メニューから行います。\
+  *シリアルポート*メニューから、ESP32が接続されているポートを選択します。(COM3)\
+]
+#figure(
+  image("./images/image (4).png", width: 40%),
+  caption: [Arduino IDEのシリアルポート設定]
+)
+#align(left)[
+  もしシリアルポートの設定が表示されない場合は、
+  USBケーブルが正しく接続されているか確認してください。
+  また、ドライバが正しくインストールされているかも確認してください。\
+]
+#pagebreak()
 
 == LED点滅のプログラム
 #header_line
+#v(20mm)
+#align(left)[
+  //#set text(size: 24pt)
+  Arduino IDEで、ESP32のGPIOピンを制御し、LEDを点滅させるプログラムです。\
+  以下のコードをArduino IDEにコピーしてください。\
+  #v(10mm)
+  *`setup()`*関数で、GPIOピンのモードを設定し、\
+  *`loop()`*関数で、LEDを点灯・消灯させる処理を繰り返します。\
+]
 #v(20mm)
 #align(center)[
   #link("https://iop-workshop.vercel.app/0001_led", "LED点滅のサンプルコードはこちら")
 ]
 #pagebreak()
+
+== プログラムのアップロード
+#header_line
+#v(10mm)
+#align(left)[
+  //#set text(size: 24pt)
+  プログラムを書いたら、*書き込み*ボタンをクリックして、ESP32にプログラムをアップロードします。\
+  アップロードが完了すると、LEDが点滅するはずです。\
+]
+#figure(
+  image("./images/image (5).png", width: 60%),
+  caption: [Arduino IDEの書き込みボタン(→のアイコン)]
+)
+#v(20mm)
+#align(left)[
+  #set text(size: 18pt, fill: orange-500)
+  書き込みに失敗する場合、ユーザー名に全角文字が含まれていることが原因の可能性があります。
+  可能であれば半角英数字のみのユーザー名を使用してください。\
+]
 
 #header_page([= 温湿度の取得],[])
 
@@ -537,6 +604,58 @@
 )
 #pagebreak()
 
+== 温湿度取得のプログラム
+#header_line
+#v(10mm)
+#align(left)[
+  //#set text(size: 24pt)
+  温湿度センサーからデータを取得するプログラムです。\
+  以下のコードをArduino IDEにコピーしてください。\
+  #v(10mm)
+  *`setup()`*関数で、I2C通信の初期化とセンサーの初期化を行い、\
+  *`loop()`*関数で、温湿度データを取得してシリアルモニタに出力します。\
+]
+#v(20mm)
+#align(center)[
+  #link("https://iop-workshop.vercel.app/0002_sht31", "温湿度取得のサンプルコードはこちら")
+]
+#pagebreak()
+
+
+== シリアルモニタとは
+#header_line
+#v(10mm)
+#align(left)[
+  //#set text(size: 24pt)
+  シリアルモニタは、Arduino IDEの一部で、\
+  マイコンとPC間の*シリアル通信*を行うためのツールです。\
+  シリアルモニタを使用して、マイコンからの情報やセンサーデータを確認できます。\
+  シリアルモニタは、*ツール*メニューから開くことができます。\
+]
+#v(10mm)
+#figure(
+  image("./images/serial_monitor.png", width: 60%),
+  caption: [ツールメニューからシリアルモニタを選択]
+)
+#pagebreak()
+
+== ボーレート
+#header_line
+#v(5mm)
+#align(left)[
+  //#set text(size: 24pt)
+  シリアルモニタを使用する際は、*ボーレート*を設定する必要があります。\
+  ボーレートは、シリアル通信の速度を表す単位です。\
+  *115200bps (ビット/秒)* を使用してください。\
+  シリアルモニタの右下にあるボーレートのドロップダウンメニューから設定できます。\
+]
+#v(10mm)
+#figure(
+  image("./images/set_baud_rate.png", width: 60%),
+  caption: [シリアルモニタのボーレート設定]
+)
+#pagebreak()
+
 == シリアルモニタで確認
 #header_line
 #v(5mm)
@@ -550,14 +669,6 @@
   image("./images/Screenshot 2025-06-23 at 14.35.00.png", width: 80%),
   caption: [シリアルモニタの画面]
 )
-#pagebreak()
-
-== 温湿度取得のプログラム
-#header_line
-#v(20mm)
-#align(center)[
-  #link("https://iop-workshop.vercel.app/0002_sht31", "温湿度取得のサンプルコードはこちら")
-]
 #pagebreak()
 
 #header_page([= MQTT通信],[IoTに適した通信方式を学びます])
@@ -577,6 +688,33 @@
   30_SAWACHI_デバイスAPIを活用した開発手法説明]
 )
 #pagebreak()
+
+== HTTP通信を確認
+#header_line
+#v(5mm)
+#align(left)[
+  //#set text(size: 24pt)
+  HTTP通信は、WebブラウザでWebサイトを閲覧する際に使用される通信方式です。
+  クライアント（ブラウザやIoTデバイス）からサーバーにリクエストを送り、サーバーからレスポンスを受け取ります。
+  この通信方式は、*リクエスト/レスポンス型*と呼ばれます。\
+  下記のコードを試してみましょう
+]
+#align(center)[
+  #link("https://iop-workshop.vercel.app/0003_http/", "HTTP通信のコード") 
+]
+#v(10mm)
+#figure(
+  image("./images/Screenshot 2025-06-26 at 11.20.34.png", width: 60%),
+  caption: [同じネットワーク上の*Node-RED*を使用して、\
+  ESP32からのHTTP通信を確認します。]
+)
+#v(10mm)
+#align(center)[
+  #set text(size: 16pt, fill: red-300)
+  / Node-RED: Node-REDは、IoTアプリケーションに適した機能を持つローコード開発ツールです。\
+]
+#pagebreak()
+
 
 == MQTT通信
 #header_line
@@ -610,28 +748,87 @@
 )
 #pagebreak()
 
+== PubSubClientのインストール
+#header_line
+#v(5mm)
+#align(left)[
+  #set text(size: 16pt)
+  MQTT通信を行うために、*PubSubClient*ライブラリをArduino IDEにインストールします。\
+  *PubSubClient*は、MQTTプロトコルを使用してメッセージを送受信するためのライブラリです。\
+  インストール方法は以下の通りです。\
+  #v(5mm)
+  + *ツール*メニューから*ライブラリを管理*を選択します。\
+  + 検索バーに「PubSubClient」と入力します。\
+  + *PubSubClient*を見つけて、*インストール*ボタンをクリックします。\
+  https://www.arduino.cc/reference/en/libraries/pubsubclient/
+]
+#figure(
+  image("./images/pubsub_install.png", width: 60%),
+  caption: [PubSubClientのインストール]
+)
+#pagebreak()
+
 == MQTT送信
 #header_line
+#v(5mm)
+#align(left)[
+  //#set text(size: 24pt)
+  MQTTがどのようなものかを理解するために、
+  Node-REDを使用してMQTTの送信テストを行います。\
+  以下のコードをArduino IDEにコピーしてください。\
+]
 #v(5mm)
 #align(center)[
   #link("https://iop-workshop.vercel.app/0004_mqtt_pub", "MQTT送信テストのコード") \
 ]
+#v(5mm)
+#figure(
+  image("./images/Screenshot 2025-06-26 at 12.21.04.png", width: 40%),
+  caption: [Node-REDを使用してMQTTの送信テストを行います。]
+)
 #pagebreak()
 
 == MQTT受信
 #header_line
 #v(5mm)
+#align(left)[
+  //#set text(size: 24pt)
+  次に、Node-REDを使用してMQTTの受信テストを行います。
+  以下のコードをArduino IDEにコピーしてください。\
+]
+#v(5mm)
 #align(center)[
   #link("https://iop-workshop.vercel.app/0005_mqtt_sub", "MQTT受信テストのコード") \
+]
+#figure(
+  image("./images/Screenshot 2025-06-26 at 12.21.04.png", width: 30%),
+  caption: [（再掲）Node-REDを使用してMQTTの受信テストを行います。]
+)
+#v(10mm)
+#align(center)[
+  #set text(size: 20pt, fill: orange-500)
+  このように、MQTTを使用すると、
+  送信だけでなく受信も行うことができます。\
 ]
 #pagebreak()
 
 == （補足）ボタンを使ったMQTT送信デモ
 #header_line
 #v(5mm)
+#align(left)[
+  //#set text(size: 24pt)
+  ESP32のGPIOピンを使用して、ボタンを押すとMQTTでメッセージを送信するデモを行います。\
+  プログラムされたタイミングだけでなく、*IoTデバイスの状態に応じて*MQTTメッセージを送信することができます。\
+]
+#v(10mm)
 #align(center)[
   #link("https://iop-workshop.vercel.app/0006_button", "ボタンを使ったMQTT送信デモ")
 ]
+#v(10mm)
+#figure(
+  image("./images/IMG_1766.jpg", width: 30%),
+  caption: [ボタンを押すとMQTTでメッセージが送信されるデモ]
+)
 #pagebreak()
 
 == Qsuプロトコル
@@ -651,20 +848,78 @@
 )
 #pagebreak()
 
-== Qsuプロトコル
+== Qsuプロトコル演習
 #header_line
 #v(5mm)
+#align(left)[
+  //#set text(size: 24pt)
+  今回は、温度と湿度をQsuフォーマットに従って送信します。
+  `ArduinoJson`ライブラリをPubSubClientと同様にインストールしてください。\
+  温湿度センサーのデータをSAWACHIに送信します。
+  以下のコードをArduino IDEにコピーしてください。\
+]
 #align(center)[
   #link("https://iop-workshop.vercel.app/0007_qsu", "Qsuプロトコルでのデータ送信")
 ]
-
+#figure(
+  image("./images/arduinojson.png", width: 60%),
+  caption: [ArduinoJsonライブラリのインストール]
+)
 #pagebreak()
 
+== Qsuプロトコルの確認
+#header_line
+#v(5mm)
+#align(left)[
+  //#set text(size: 24pt)
+  Qsuプロトコルで送信されたデータは、
+  データはJSON形式で送信されます。\
+  以下のような形式でデータが送信されます。\
+]
+#align(left)[
+  ```
+  {"msgId":"P00000001","deviceId":"some_device_id","data":{"400":"1","1000":"27.34","1001":"71.14"}}
+  ```
+]
+#figure(
+  image("./images/Screenshot 2025-06-26 at 13.32.59.png", width: 60%),
+  caption: [Qsuプロトコルで送信されたデータの例]
+)
+
+
 #header_page([= SAWACHIでのデータ確認],[詳細分析画面＝モデルメソッドを使用してデータを確認します])
+
+== デバイスAPIのセキュリティ
+#header_line
+#v(5mm)
+#align(left)[
+  //#set text(size: 24pt)
+  SAWACHIでは、デバイスAPIのセキュリティを確保するために、
+  以下のような仕組みを採用しています。\
+  #v(5mm)
++ セキュリティ管理が可能な PaaS(AWS IoT Core)で構築
++ MQTT broker は PaaS が提供する管理されたサービスを利用
++ セキュリティが担保され発行された*クライアント証明書*を利用
++ セキュリティポリシーの厳格な管理によりクライアントの制限が可能
++ MQTT Pub/Sub に厳密なアクセス制御を施し末端までセキュアな仕組み
++ 許可されたクライアントからしかアクセスできない仕組み
+]
+#figure(
+  image("./images/Screenshot 2025-06-26 at 13.40.59.png", width: 80%),
+  caption: [デバイスAPIについて\
+  出典: 【配布用】10_SAWACHI APIの概要]
+)
+#pagebreak()
+
 
 == データの送信のプログラム
 #header_line
 #v(5mm)
+#align(left)[
+  //#set text(size: 24pt)
+  各参加者ごとに証明書を用意しています（PASTEME.txt）\
+  下記コードに証明書を貼り付けてください。\
+]
 #align(center)[
   #link("https://iop-workshop.vercel.app/0008_sawachi", "SAWACHIへのデータ送信")
 ]
@@ -676,9 +931,11 @@
 #align(left)[
   SAWACHIの詳細分析画面にアクセスするには、\
   ブラウザで以下のURLを開きます。\
-  #v(10mm)
-  // TODO: correct URL
-  #link("https://sawachi.iot-community.jp/analysis", "詳細分析画面")
+  (ユーザー名、パスワードは別途お伝えします)
+]
+#v(10mm)
+#align(center)[
+  #link("https://testbed-tech-mm.sawachi.com/", "詳細分析画面")
 ]
 #figure(
   image("./images/Screenshot 2025-06-23 at 16.17.40.png", width: 80%),
@@ -690,6 +947,7 @@
 #header_line
 #v(30mm)
 #align(left)[
+  詳細分析画面は非常に多機能ですが、\
   今回は表示に必要な設定を既に行っています。\
   #set text(size: 20pt, fill: orange-500)
   データが確認できれば、今回の講座は成功です!\
