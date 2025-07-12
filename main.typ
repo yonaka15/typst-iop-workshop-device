@@ -127,7 +127,7 @@
   事前準備は完了していますか？
 
   #link(
-    "https://ptk-y-nakahira.github.io/typst-iop-advance-materials/",
+    "https://px-y-nakahira.github.io/typst-iop-advance-materials/",
     "事前準備資料",
   )
 ]
@@ -487,7 +487,7 @@
   *ツール*メニューから*ボードマネージャー*を開き、
   ESP32のボードをインストールしてください。\
   #link(
-    "https://ptk-y-nakahira.github.io/typst-iop-advance-materials/",
+    "https://px-y-nakahira.github.io/typst-iop-advance-materials/",
     "事前準備資料",
   )
 ]
