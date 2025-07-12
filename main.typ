@@ -69,8 +69,8 @@
 #figure(
   image("./images/Screenshot 2025-06-23 at 10.17.01.png", width: 60%),
   caption: [IoPクラウド連携における開発範囲\
-  出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
-  30_SAWACHI_デバイスAPIを活用した開発手法説明]
+  出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
+  30_SAWACHI_デバイスAPIを活用した開発手法説明]
 )
 #align(left)[
   補足:\
@@ -127,7 +127,7 @@
   事前準備は完了していますか？
 
   #link(
-    "https://ptk-y-nakahira.github.io/typst-iop-advance-materials/",
+    "https://px-y-nakahira.github.io/typst-iop-advance-materials/",
     "事前準備資料",
   )
 ]
@@ -487,7 +487,7 @@
   *ツール*メニューから*ボードマネージャー*を開き、
   ESP32のボードをインストールしてください。\
   #link(
-    "https://ptk-y-nakahira.github.io/typst-iop-advance-materials/",
+    "https://px-y-nakahira.github.io/typst-iop-advance-materials/",
     "事前準備資料",
   )
 ]
@@ -684,8 +684,8 @@
 #figure(
   image("./images/Screenshot 2025-06-23 at 14.37.18.png", width: 70%),
   caption: [デバイス開発用途のAPI について\
-  出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
-  30_SAWACHI_デバイスAPIを活用した開発手法説明]
+  出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
+  30_SAWACHI_デバイスAPIを活用した開発手法説明]
 )
 #pagebreak()
 
@@ -727,8 +727,8 @@
 #figure(
   image("./images/Screenshot 2025-06-23 at 14.42.59.png", width: 60%),
   caption: [IoPクラウドが MQTT を採用する理由\
-    出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
-  30_SAWACHI_デバイスAPIを活用した開発手法説明]
+    出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
+  30_SAWACHI_デバイスAPIを活用した開発手法説明]
 )
 #pagebreak()
 
@@ -743,8 +743,8 @@
 #figure(
   image("./images/Screenshot 2025-06-23 at 14.55.04.png", width: 60%),
   caption: [Pub/Sub 方式の MQTT 通信を採用\
-    出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
-  30_SAWACHI_デバイスAPIを活用した開発手法説明]
+    出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
+  30_SAWACHI_デバイスAPIを活用した開発手法説明]
 )
 #pagebreak()
 
@@ -843,8 +843,8 @@
 #figure(
   image("./images/Screenshot 2025-06-23 at 15.29.22.png", width: 60%),
   caption: [デバイス API のデータ連携の概要\
-    出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
-  30_SAWACHI_デバイスAPIを活用した開発手法説明]
+    出典: 【配布用】SAWACHI技術資料ライブラリ_API編\
+  30_SAWACHI_デバイスAPIを活用した開発手法説明]
 )
 #pagebreak()
 
@@ -956,4 +956,3 @@
   image("./images/Screenshot 2025-06-23 at 16.20.05.png", width: 80%),
   caption: [詳細分析画面のデータ表示例]
 )
-
